@@ -1,0 +1,395 @@
+{
+    "cards" : [
+        {
+            "photo_url": "",
+            "name": "Хреша",
+            "description": "П-п-привет, не хочешь поучаствовать в пикете в защиту прав LGBTQ+-2?",
+            "right": {
+                "title": "Пук-пук, конечно...",
+                "resource_changes": {
+                    "education": -10,
+                    "friendship": 20,
+                    "money": 0,
+                    "health": -10
+                }
+            },
+            "left": {
+                "title": "Ахахах, говорящая <censored>",
+                "resource_changes": {
+                    "education": 10,
+                    "friendship": -5,
+                    "money": 10,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Хреша",
+            "description": "Я подъсяду?",
+            "right": {
+                "title": "Конечно!!!",
+                "resource_changes": {
+                    "education": -5,
+                    "friendship": 10,
+                    "money": 0,
+                    "health": -5
+                }
+            },
+            "left": {
+                "title": "Нет, у тебя значки странные",
+                "resource_changes": {
+                    "education": 15,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Хреша",
+            "description": "П-п-приветик, слышал там чтение стихов новой школы интелектуалов на следующей неделе",
+            "left": {
+                "title": "А мне Пушкин дороже постмодернизма!",
+                "resource_changes": {
+                    "education": 20,
+                    "friendship": -10,
+                    "money": 0,
+                    "health": 10
+                }
+            },
+            "right": {
+                "title": "ДА, ПОШЛИ!!!11",
+                "resource_changes": {
+                    "education": -10,
+                    "friendship": 20,
+                    "money": 0,
+                    "health": -10
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "ВлаДИК",
+            "description": "Дарова, братишка, делаем проект, будешь со мной делать start-up?",
+            "right": {
+                "title": "Конечно, братишка, обижаешь",
+                "resource_changes": {
+                    "education": 30,
+                    "friendship": 50,
+                    "money": -5,
+                    "health": 0
+                }
+            },
+            "left": {
+                "title": "Соре, Владос, учеба, работа, прочее...",
+                "resource_changes": {
+                    "education": -10,
+                    "friendship": -5,
+                    "money": 10,
+                    "health": 10
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "ВлаДИК",
+            "description": "Здарова, братан, пошли шары гонять(боулинг)",
+            "left": {
+                "title": "Соре, у меня шаров нет(для боулинга)...",
+                "resource_changes": {
+                    "education": 10,
+                    "friendship": -20,
+                    "money": 5,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Конечно, не забудь протереть шары(для боулинга)",
+                "resource_changes": {
+                    "education": -5,
+                    "friendship": 35,
+                    "money": 0,
+                    "health": 20
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "ВлаДИК",
+            "description": "Пошли в саб, возьмем по бутеру, а потом в футбол",
+            "left": {
+                "title": "Это вредно и дорого, и вообще я занят!",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": -10,
+                    "money": 5,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Конечно, мужик",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 25,
+                    "money": -10,
+                    "health": 25
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "ВлаДИК",
+            "description": "Чувак, хочешь ко мне на стажку?",
+            "left": {
+                "title": "Нет, мне мама сказала, что «Конура» плохая компания, я пойду в «Ындыкс»",
+                "resource_changes": {
+                    "education": -15,
+                    "friendship": -20,
+                    "money": -15,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Только, такой крутой мужик не может работать в плохой компании",
+                "resource_changes": {
+                    "education": 10,
+                    "friendship": 50,
+                    "money": 30,
+                    "health": 10
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Длинный Гор",
+            "description": "П-п-привет, не хочешь вступить в мой группу? Мы играем хард-прог-шугейзокор",
+            "left": {
+                "title": "Что за херня? Я слушаю только Моргенштерна?",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": -10,
+                    "money": 0,
+                    "health": 15
+                }
+            },
+            "right": {
+                "title": "Конечно, я тоже люблю музыку для особенных людей!",
+                "resource_changes": {
+                    "education": -10,
+                    "friendship": 10,
+                    "money": -10,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Длинный Гор",
+            "description": "П-п-привет, п-п-пошли п-п-писать тренировку по спортпроге",
+            "left": {
+                "title": "Спортпрога - это не спорт",
+                "resource_changes": {
+                    "education": -10,
+                    "friendship": -10,
+                    "money": 0,
+                    "health": 30
+                }
+            },
+            "right": {
+                "title": "Конечно, надеюсь мама будет мной довольна",
+                "resource_changes": {
+                    "education": 10,
+                    "friendship": 10,
+                    "money": -10,
+                    "health": -20
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Длинный Гор",
+            "description": "Уа-уа-уа, я не нравлюсь девочкам, что делать?!",
+            "left": {
+                "title": "Чувак, забей",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": -5,
+                    "money": 0,
+                    "health": 10
+                }
+            },
+            "right": {
+                "title": "Пошли обсудим",
+                "resource_changes": {
+                    "education": -5,
+                    "friendship": 30,
+                    "money": -5,
+                    "health": -5
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Физрук",
+            "description": "Ну-ка, на турнички, и 10 подтягиваний. Пошел!",
+            "left": {
+                "title": "У меня справка",
+                "resource_changes": {
+                    "education": 5,
+                    "friendship": 0,
+                    "money": 5,
+                    "health": -15
+                }
+            },
+            "right": {
+                "title": "Пойти на турник",
+                "resource_changes": {
+                    "education": 10,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": 20
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Физрук",
+            "description": "Ну-ка, упор лежа, и 10 отжиманий!",
+            "left": {
+                "title": "Бездыханно упасть",
+                "resource_changes": {
+                    "education": -5,
+                    "friendship": 10,
+                    "money": 0,
+                    "health": -15
+                }
+            },
+            "right": {
+                "title": "Сделать хотя-бы 3 штуки",
+                "resource_changes": {
+                    "education": 15,
+                    "friendship": 0,
+                    "money": -5,
+                    "health": 15
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Физрук",
+            "description": "Ну-ка, направо!",
+            "left": {
+                "title": "Повернуться налево",
+                "resource_changes": {
+                    "education": -10,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": -10
+                }
+            },
+            "right": {
+                "title": "Повернуться направо",
+                "resource_changes": {
+                    "education": 10,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": 10
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Продавец программистов",
+            "description": "Не хотите поработать на «Конуру»",
+            "left": {
+                "title": "Я занят",
+                "resource_changes": {
+                    "education": 25,
+                    "friendship": 0,
+                    "money": -10,
+                    "health": 15
+                }
+            },
+            "right": {
+                "title": "Конечно, где подписать?",
+                "resource_changes": {
+                    "education": -15,
+                    "friendship": 0,
+                    "money": 45,
+                    "health": -5
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Продавец программистов",
+            "description": "Не хотите поработать на «Ындекс»",
+            "left": {
+                "title": "Я занят",
+                "resource_changes": {
+                    "education": 25,
+                    "friendship": 0,
+                    "money": -10,
+                    "health": 15
+                }
+            },
+            "right": {
+                "title": "Конечно, где подписать?",
+                "resource_changes": {
+                    "education": -15,
+                    "friendship": 0,
+                    "money": 45,
+                    "health": -5
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Продавец программистов",
+            "description": "Не хотите поработать на «Дурьков»",
+            "left": {
+                "title": "Я занят",
+                "resource_changes": {
+                    "education": 25,
+                    "friendship": 0,
+                    "money": -10,
+                    "health": 15
+                }
+            },
+            "right": {
+                "title": "Конечно, где подписать?",
+                "resource_changes": {
+                    "education": -15,
+                    "friendship": 0,
+                    "money": 45,
+                    "health": -5
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Продавец программистов",
+            "description": "Не хотите поработать на «ВКровате»",
+            "left": {
+                "title": "Я занят",
+                "resource_changes": {
+                    "education": 25,
+                    "friendship": 0,
+                    "money": -10,
+                    "health": 15
+                }
+            },
+            "right": {
+                "title": "Конечно, где подписать?",
+                "resource_changes": {
+                    "education": -15,
+                    "friendship": 0,
+                    "money": 45,
+                    "health": -5
+                }
+            }
+        }
+    ]
+}

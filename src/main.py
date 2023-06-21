@@ -1,3 +1,4 @@
+import random
 import uuid
 from copy import copy
 import uvicorn
@@ -5,7 +6,8 @@ from fastapi import FastAPI, APIRouter, Request, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 
-from entities import Card, card_example, CardEvent
+from entities import Card, CardEvent
+from src.cards_adapter import convert_json_to_cards
 from src.settings import AppSettings
 
 settings = AppSettings(secret_key=str(uuid.uuid4()))
@@ -21,8 +23,15 @@ app.add_middleware(
 app.add_middleware(SessionMiddleware, secret_key=settings.secret_key, https_only=True)
 api_router = APIRouter(prefix='/api')
 
-cards = [card_example] * 20
-card_by_id: dict[str, Card] = {card.id: card for card in cards}
+cards = []
+card_by_id: dict[str, Card] = dict()
+
+
+@app.on_event('startup')
+async def on_startup():
+    global cards, card_by_id
+    cards = list(convert_json_to_cards('cards.json'))
+    card_by_id = {card.id: card for card in cards}
 
 
 @api_router.get('/')
@@ -32,8 +41,8 @@ async def root() -> dict:
 
 @api_router.get('/cards')
 async def return_cards() -> list[Card]:
-    # TODO add pagination
-    return cards[:20]
+    k = min(len(cards), 5)
+    return random.sample(cards, k)
 
 
 @api_router.post('/swipe')
