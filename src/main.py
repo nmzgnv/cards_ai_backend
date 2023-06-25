@@ -45,6 +45,10 @@ async def return_cards() -> list[Card]:
     return random.sample(cards, k)
 
 
+class InvalidOperation(Exception):
+    pass
+
+
 @api_router.post('/swipe')
 async def update_resources(request: Request, card_id: str = Body(embed=True),
                            direction: str = Body(embed=True, regex='(right)|(left)')) -> list[int]:
@@ -54,7 +58,11 @@ async def update_resources(request: Request, card_id: str = Body(embed=True),
 
     event: CardEvent = getattr(card, direction)
     current_resources = _get_resources(request)
-    new_resources = _apply_changes(current_resources, event.changes)
+    try:
+        new_resources = _apply_changes(current_resources, event.changes)
+    except InvalidOperation as e:
+        raise HTTPException(status_code=400, detail='Game over') from e
+
     request.session['resources'] = new_resources
     return new_resources
 
@@ -66,7 +74,7 @@ async def get_resources(request: Request) -> list[int]:
 
 def _get_resources(request: Request) -> list[int]:
     resources = request.session.get('resources')
-    return resources if resources else [0] * 4
+    return resources if resources else [50] * 4
 
 
 def _apply_changes(current_resources: list[int], changes: list[int]) -> list[int]:
@@ -76,7 +84,9 @@ def _apply_changes(current_resources: list[int], changes: list[int]) -> list[int
     current_resources = copy(current_resources)
     for i in range(len(current_resources)):
         new_value = current_resources[i] + changes[i]
-        current_resources[i] = max(min(new_value, 100), -100)
+        if new_value <= 0:
+            raise InvalidOperation('Resources cant be lower than 0')
+        current_resources[i] = min(new_value, 100)
 
     return current_resources
 
