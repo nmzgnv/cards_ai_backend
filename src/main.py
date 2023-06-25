@@ -1,8 +1,9 @@
 import random
 import uuid
 from copy import copy
+from typing import Annotated
 import uvicorn
-from fastapi import FastAPI, APIRouter, Request, HTTPException, Body
+from fastapi import FastAPI, APIRouter, Request, HTTPException, Body, Path, Query
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 
@@ -53,13 +54,13 @@ async def on_startup():
 
 @api_router.get('/')
 async def root() -> dict:
-    return {"message": "Hello World 2.0"}
+    return {"message": "Hello World"}
 
 
 @api_router.get('/cards')
-async def return_cards(request: Request) -> list[Card]:
+async def return_cards(request: Request, count: int = Query(5, gt=0, lt=20)) -> list[Card]:
     request.session['_init'] = True
-    k = min(len(cards), 8)
+    k = min(len(cards), count)
     return random.sample(cards, k)
 
 
