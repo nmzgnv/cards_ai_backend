@@ -17,8 +17,9 @@ SESSION_KEY = 'session'
 MAX_AGE = 14 * 24 * 60 * 60  # 14 days, in seconds
 
 app = FastAPI()
-app.add_middleware(SessionMiddleware, session_cookie=SESSION_KEY, secret_key=settings.secret_key,
-                   https_only=True)
+app.add_middleware(
+    SessionMiddleware, session_cookie=SESSION_KEY, secret_key=settings.secret_key
+)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*'],
@@ -30,15 +31,6 @@ api_router = APIRouter(prefix='/api')
 
 cards = []
 card_by_id: dict[str, Card] = dict()
-
-
-@app.middleware("http")
-async def session_middleware(request: Request, call_next):
-    response: Response = await call_next(request)
-    session = request.cookies.get(SESSION_KEY)
-    if session is not None:
-        response.set_cookie(SESSION_KEY, session, max_age=MAX_AGE, secure=False, httponly=True)
-    return response
 
 
 @app.on_event('startup')
@@ -55,6 +47,7 @@ async def root() -> dict:
 
 @api_router.get('/cards')
 async def return_cards(request: Request) -> list[Card]:
+    print(request.session)
     request.session['_init'] = True
     k = min(len(cards), 5)
     return random.sample(cards, k)
