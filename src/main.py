@@ -19,9 +19,19 @@ app = FastAPI()
 app.add_middleware(
     SessionMiddleware, session_cookie=SESSION_KEY, secret_key=settings.secret_key
 )
+
+origins = [
+    'http://127.0.0.1',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+    'http://185.87.50.169',
+    'http://185.87.50.169:3000',
+    'http://185.87.50.169:8000',
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['*'],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
