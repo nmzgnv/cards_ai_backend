@@ -36,7 +36,7 @@ async def on_startup():
 
 @api_router.get('/')
 async def root() -> dict:
-    return {"message": "Hello World"}
+    return {"message": "Hello World 1.0"}
 
 
 @api_router.get('/cards')
