@@ -5,7 +5,6 @@ import uvicorn
 from fastapi import FastAPI, APIRouter, Request, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
-from starlette.responses import Response
 
 from entities import Card, CardEvent
 from src.cards_adapter import convert_json_to_cards
@@ -42,7 +41,7 @@ async def on_startup():
 
 @api_router.get('/')
 async def root() -> dict:
-    return {"message": "Hello World 1.0"}
+    return {"message": "Hello World 2.0"}
 
 
 @api_router.get('/cards')
