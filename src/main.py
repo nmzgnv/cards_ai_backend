@@ -20,7 +20,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(SessionMiddleware, secret_key=settings.secret_key, https_only=True)
+app.add_middleware(SessionMiddleware, secret_key=settings.secret_key, https_only=settings.ssl_enabled)
 api_router = APIRouter(prefix='/api')
 
 cards = []
