@@ -24,11 +24,11 @@ card_example = Card(
     description="description",
     left=CardEvent(
         title='left',
-        changes=[1, 2, 3, 4]
+        changes=[1, 2, -3, 4]
     ),
     right=CardEvent(
         title='right',
-        changes=[-1, -2, -3, -4]
+        changes=[-1, -2, 3, -4]
     )
 )
 
