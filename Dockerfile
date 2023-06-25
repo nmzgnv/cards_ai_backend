@@ -7,4 +7,5 @@ COPY . /app
 
 WORKDIR /app/src
 
+RUN ["chmod", "+x", "/app/entrypoint.sh"]
 ENTRYPOINT ["/app/entrypoint.sh"]

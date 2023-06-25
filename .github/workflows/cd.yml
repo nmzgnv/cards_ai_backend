@@ -21,4 +21,4 @@ jobs:
           script: |
             docker stop backend-app || true
             docker rm backend-app || true
-            docker run -p 8000:8000 --name backend-app -d nmzgnv/cards_ai -c "uvicorn main:app --host 0.0.0.0 --port 8000"
+            docker run -p 8000:8000 --name backend-app -d nmzgnv/cards_ai:master -c "uvicorn main:app --host 0.0.0.0 --port 8000"
