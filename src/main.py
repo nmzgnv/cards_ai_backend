@@ -15,6 +15,8 @@ settings = AppSettings(secret_key=str(uuid.uuid4()))
 SESSION_KEY = 'session'
 
 app = FastAPI()
+app.add_middleware(SessionMiddleware, session_cookie=SESSION_KEY, secret_key=settings.secret_key,
+                   https_only=True)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*'],
@@ -22,21 +24,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(SessionMiddleware, session_cookie=SESSION_KEY, secret_key=settings.secret_key,
-                   https_only=settings.ssl_enabled, same_site='none')
 api_router = APIRouter(prefix='/api')
 
 cards = []
 card_by_id: dict[str, Card] = dict()
-
-
-@app.middleware("http")
-async def session_middleware(request: Request, call_next):
-    response = await call_next(request)
-    session = request.cookies.get(SESSION_KEY)
-    if not session:
-        response.set_cookie(key=SESSION_KEY, value=uuid.uuid4(), httponly=settings.ssl_enabled)
-    return response
 
 
 @app.on_event('startup')
@@ -52,7 +43,8 @@ async def root() -> dict:
 
 
 @api_router.get('/cards')
-async def return_cards() -> list[Card]:
+async def return_cards(request: Request) -> list[Card]:
+    request.session['_init'] = True
     k = min(len(cards), 5)
     return random.sample(cards, k)
 
