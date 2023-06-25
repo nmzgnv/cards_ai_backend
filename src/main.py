@@ -1,9 +1,8 @@
 import random
 import uuid
 from copy import copy
-from typing import Annotated
 import uvicorn
-from fastapi import FastAPI, APIRouter, Request, HTTPException, Body, Path, Query
+from fastapi import FastAPI, APIRouter, Request, HTTPException, Body, Query
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 
@@ -81,7 +80,7 @@ async def update_resources(request: Request, card_id: str = Body(embed=True),
         new_resources = _apply_changes(current_resources, event.changes)
     except InvalidOperation as e:
         request.session.clear()
-        raise HTTPException(status_code=400, detail='Game over') from e
+        raise HTTPException(status_code=200, detail='Game over') from e
 
     request.session['resources'] = new_resources
     return new_resources
