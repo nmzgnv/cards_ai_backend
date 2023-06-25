@@ -551,6 +551,75 @@
                     "health": 0
                 }
             }
+        },
+        {
+            "photo_url": "",
+            "name": "Сотрудник организации RealЗайм",
+            "description": "Вы просрочили очередную выплату, мы вынуждены принять меры",
+            "left": {
+                "title": "Попытаться скрыться от коллекторов",
+                "resource_changes": {
+                    "education": -100,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Собрать все оставшиеся деньги, продать всё и наконец расплатиться",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 0,
+                    "money": -100,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Военкомат",
+            "description": "Вы принесли справку не по форме - вам повестка на сбор",
+            "left": {
+                "title": "Пойти служить",
+                "resource_changes": {
+                    "education": -100,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Скрываться",
+                "resource_changes": {
+                    "education": -100,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Хирург",
+            "description": "Очнулся, очнулся. Вы попали в дтп, все очень серьезно, требуется дорогостоящая операция",
+            "left": {
+                "title": "Делать нечего, надо платить",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 0,
+                    "money": -100,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Делать нечего, надо платить",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 0,
+                    "money": -100,
+                    "health": 0
+                }
+            }
         }
     ]
 }
