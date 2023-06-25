@@ -2,7 +2,7 @@ import random
 import uuid
 from copy import copy
 import uvicorn
-from fastapi import FastAPI, APIRouter, Request, HTTPException, Body
+from fastapi import FastAPI, APIRouter, Request, HTTPException, Body, Query
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 
@@ -12,15 +12,32 @@ from src.settings import AppSettings
 
 settings = AppSettings(secret_key=str(uuid.uuid4()))
 
+SESSION_KEY = 'session'
+MAX_AGE = 14 * 24 * 60 * 60  # 14 days, in seconds
+
 app = FastAPI()
 app.add_middleware(
+    SessionMiddleware, session_cookie=SESSION_KEY, secret_key=settings.secret_key
+)
+
+origins = [
+    'http://localhost',
+    'http://localhost:63342',
+    'http://127.0.0.1',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+    'http://185.87.50.169',
+    'http://185.87.50.169:3000',
+    'http://185.87.50.169:8000',
+]
+
+app.add_middleware(
     CORSMiddleware,
-    allow_origins=['*'],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(SessionMiddleware, secret_key=settings.secret_key, https_only=settings.ssl_enabled)
 api_router = APIRouter(prefix='/api')
 
 cards = []
@@ -40,8 +57,9 @@ async def root() -> dict:
 
 
 @api_router.get('/cards')
-async def return_cards() -> list[Card]:
-    k = min(len(cards), 5)
+async def return_cards(request: Request, count: int = Query(5, gt=0, lt=20)) -> list[Card]:
+    request.session['_init'] = True
+    k = min(len(cards), count)
     return random.sample(cards, k)
 
 
@@ -61,7 +79,8 @@ async def update_resources(request: Request, card_id: str = Body(embed=True),
     try:
         new_resources = _apply_changes(current_resources, event.changes)
     except InvalidOperation as e:
-        raise HTTPException(status_code=400, detail='Game over') from e
+        request.session.clear()
+        raise HTTPException(status_code=200, detail='Game over') from e
 
     request.session['resources'] = new_resources
     return new_resources

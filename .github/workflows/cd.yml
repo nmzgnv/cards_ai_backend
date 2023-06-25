@@ -19,6 +19,6 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 22
           script: |
-            docker stop $(docker ps -a -q)
-            docker rm $(docker ps -a -q)
-            docker run -p 8000:8000 -d nmzgnv/cards_ai -c "uvicorn main:app --host 0.0.0.0 --port 8000"
+            docker stop backend || true
+            docker rm backend || true
+            docker run --pull=always --name backend -p 8000:8000 -d nmzgnv/cards_ai:master -c "uvicorn main:app --host 0.0.0.0 --port 8000"

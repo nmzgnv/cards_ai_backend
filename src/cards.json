@@ -390,6 +390,236 @@
                     "health": -5
                 }
             }
+        },
+        {
+            "photo_url": "",
+            "name": "Ян Демианов",
+            "description": "Здарова! Руку то пожмешь?",
+            "left": {
+                "title": "Я тебя знаю, давай без этого",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": -5,
+                    "money": 0,
+                    "health": 5
+                }
+            },
+            "right": {
+                "title": "Конечно, о чем речь",
+                "resource_changes": {
+                    "education": 5,
+                    "friendship": 10,
+                    "money": 0,
+                    "health": -5
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Ян Демианов",
+            "description": "I want you for the Romb",
+            "left": {
+                "title": "Нет, я уже в Square",
+                "resource_changes": {
+                    "education": 5,
+                    "friendship": -10,
+                    "money": 0,
+                    "health": -5
+                }
+            },
+            "right": {
+                "title": "Yes, ofc",
+                "resource_changes": {
+                    "education": 5,
+                    "friendship": 20,
+                    "money": 0,
+                    "health": 10
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Ян Демианов",
+            "description": "Поехали на самокатах? (Там есть винное мороженое)",
+            "left": {
+                "title": "Нет, я лучше пешком",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": -10,
+                    "money": 10,
+                    "health": 10
+                }
+            },
+            "right": {
+                "title": "Нууууу давай",
+                "resource_changes": {
+                    "education": 5,
+                    "friendship": 15,
+                    "money": -15,
+                    "health": -5
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Сотрудник банка Øzona",
+            "description": "Алло, Здравстуйте! Вы совершали операцию на 1337 рублей сегодня в 2:28?",
+            "left": {
+                "title": "Погодите, сейчас проверю",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 0,
+                    "money": -20,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Нет, до свидания",
+                "resource_changes": {
+                    "education": 10,
+                    "friendship": 0,
+                    "money": 20,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Охранник",
+            "description": "Забыли пропуск? Ничем не могу помочь...",
+            "left": {
+                "title": "Очень жаль, ладно, придется возвращаться за пропуском",
+                "resource_changes": {
+                    "education": -15,
+                    "friendship": 0,
+                    "money": -10,
+                    "health": 10
+                }
+            },
+            "right": {
+                "title": "Очень жаль, ладно, я домой (Проскочу через турникет с группашом)",
+                "resource_changes": {
+                    "education": 15,
+                    "friendship": 10,
+                    "money": 0,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Толчей Андронов",
+            "description": "Го на буткемп? Посидим в компах, поиграем",
+            "left": {
+                "title": "Нет, я лучше подготовлюсь к экзамену получше",
+                "resource_changes": {
+                    "education": 20,
+                    "friendship": -10,
+                    "money": 10,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Чур в этот раз в танки не играем",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 15,
+                    "money": -10,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Дионис SayFar",
+            "description": "Привет! У Толчея Андронова скоро ДР, что будем дарить?",
+            "left": {
+                "title": "Настольную игру ДилDоLion, у него мало настолок",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 15,
+                    "money": -20,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Кофемолка, он же обажает кофе",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 15,
+                    "money": -15,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Сотрудник организации RealЗайм",
+            "description": "Вы просрочили очередную выплату, мы вынуждены принять меры",
+            "left": {
+                "title": "Попытаться скрыться от коллекторов",
+                "resource_changes": {
+                    "education": -100,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Собрать все оставшиеся деньги, продать всё и наконец расплатиться",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 0,
+                    "money": -100,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Военкомат",
+            "description": "Вы принесли справку не по форме - вам повестка на сбор",
+            "left": {
+                "title": "Пойти служить",
+                "resource_changes": {
+                    "education": -100,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Скрываться",
+                "resource_changes": {
+                    "education": -100,
+                    "friendship": 0,
+                    "money": 0,
+                    "health": 0
+                }
+            }
+        },
+        {
+            "photo_url": "",
+            "name": "Хирург",
+            "description": "Очнулся, очнулся. Вы попали в дтп, все очень серьезно, требуется дорогостоящая операция",
+            "left": {
+                "title": "Делать нечего, надо платить",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 0,
+                    "money": -100,
+                    "health": 0
+                }
+            },
+            "right": {
+                "title": "Делать нечего, надо платить",
+                "resource_changes": {
+                    "education": 0,
+                    "friendship": 0,
+                    "money": -100,
+                    "health": 0
+                }
+            }
         }
     ]
 }
