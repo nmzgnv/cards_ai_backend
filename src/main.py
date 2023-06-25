@@ -21,6 +21,7 @@ app.add_middleware(
 )
 
 origins = [
+    'http://localhost',
     'http://localhost:63342',
     'http://127.0.0.1',
     'http://127.0.0.1:3000',
@@ -57,9 +58,8 @@ async def root() -> dict:
 
 @api_router.get('/cards')
 async def return_cards(request: Request) -> list[Card]:
-    print(request.session)
     request.session['_init'] = True
-    k = min(len(cards), 5)
+    k = min(len(cards), 8)
     return random.sample(cards, k)
 
 
@@ -79,6 +79,7 @@ async def update_resources(request: Request, card_id: str = Body(embed=True),
     try:
         new_resources = _apply_changes(current_resources, event.changes)
     except InvalidOperation as e:
+        request.session.clear()
         raise HTTPException(status_code=400, detail='Game over') from e
 
     request.session['resources'] = new_resources
