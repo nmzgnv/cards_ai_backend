@@ -5,6 +5,7 @@ import uvicorn
 from fastapi import FastAPI, APIRouter, Request, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
+from starlette.responses import Response
 
 from entities import Card, CardEvent
 from src.cards_adapter import convert_json_to_cards
@@ -13,6 +14,7 @@ from src.settings import AppSettings
 settings = AppSettings(secret_key=str(uuid.uuid4()))
 
 SESSION_KEY = 'session'
+MAX_AGE = 14 * 24 * 60 * 60  # 14 days, in seconds
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, session_cookie=SESSION_KEY, secret_key=settings.secret_key,
@@ -28,6 +30,15 @@ api_router = APIRouter(prefix='/api')
 
 cards = []
 card_by_id: dict[str, Card] = dict()
+
+
+@app.middleware("http")
+async def session_middleware(request: Request, call_next):
+    response: Response = await call_next(request)
+    session = request.cookies.get(SESSION_KEY)
+    if session is not None:
+        response.set_cookie(SESSION_KEY, session, max_age=MAX_AGE, secure=False, httponly=True)
+    return response
 
 
 @app.on_event('startup')
